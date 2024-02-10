@@ -10,6 +10,7 @@ export default function ProductByType() {
   const [page, setPage] = useState(1);
   const params = useParams();
   useEffect(() => {
+    setPage(1);
     const promise = axios.get(
       process.env.REACT_APP_BACK_END_API_URI + '/products/' + params.type
     );
