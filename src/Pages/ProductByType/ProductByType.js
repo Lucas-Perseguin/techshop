@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container } from './ProductByType.style';
+import { Container, Page } from './ProductByType.style';
 import Products from './../../Components/Products/Products';
 import Type from './Type/Type';
 
 export default function ProductByType() {
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
   const params = useParams();
   useEffect(() => {
     const promise = axios.get(
@@ -20,7 +21,7 @@ export default function ProductByType() {
   return (
     <Container>
       <Type title={params.type} />
-      <Products products={products} type={params.type} />
+      <Products products={products} type={params.type} page={page} setPage={setPage} />
     </Container>
   );
 }

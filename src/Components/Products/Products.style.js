@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 `;
 
 export const Header = styled.header`
@@ -27,4 +28,12 @@ export const ProductList = styled.div`
   @media (min-width: 660px) {
     justify-content: flex-start;
   }
+`;
+
+export const Page = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+  padding-bottom: 20px;
 `;
