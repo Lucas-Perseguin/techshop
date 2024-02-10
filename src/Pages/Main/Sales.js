@@ -51,6 +51,7 @@ const ContainerBoxes = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  gap: 20px;
   @media (max-width: 50em) {
     flex-direction: column;
     height: 100%;
@@ -67,7 +68,6 @@ const Box1 = styled.div`
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: bottom;
-  margin: 0 1em;
   border-radius: 0.31em;
   display: flex;
   justify-content: center;
@@ -82,11 +82,12 @@ const Box1 = styled.div`
   }
 `;
 const MiniBoxes = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 25%;
+  gap: 4em;
   @media (max-width: 50em) {
     width: 100%;
-    display: flex;
-    flex-direction: column;
     gap: 15px;
   }
 `;
@@ -98,7 +99,6 @@ const Box2 = styled.div`
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: bottom;
-  margin: 0 1em;
   border-radius: 0.31em;
   display: flex;
   justify-content: center;
@@ -119,7 +119,6 @@ const Box3 = styled.div`
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: bottom;
-  margin: 4em 1em;
   border-radius: 0.31em;
   display: flex;
   justify-content: center;

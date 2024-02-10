@@ -84,7 +84,7 @@ export default function MainPage() {
 }
 const Container = styled.div`
   text-align: center;
-  padding-top: 2.5em;
+  padding: 2.5em 0;
   font-family: "Poppins";
 `;
 const Title = styled.h1`
@@ -164,5 +164,5 @@ const Items = styled.div`
   margin-bottom: 20px;
 `;
 const ContainerSales = styled.div`
-  width: 100vw;
+  width: 100%;
 `;
