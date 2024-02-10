@@ -17,7 +17,8 @@ const Container = styled.div`
 const ProductContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   ion-icon {
     color: ${mainPink};
     font-size: 35px;
@@ -28,11 +29,18 @@ const ProductContainer = styled.div`
     height: 90px;
     object-fit: cover;
   }
+  @media (max-width: 50em) {
+   flex-direction: column;
+   gap: 10px;
+   justify-content: center;
+   align-items: center; 
+  }
 `;
 
 const Name = styled.div`
   width: 200px;
   word-wrap: break-word;
+  text-align: center;
   font-size: 16px;
   font-weight: 800;
 `;
@@ -89,10 +97,10 @@ export default function ProductInCart({
         config
       );
       promisse.then((response) => {
-        setProductAmount(productAmount + 1);
         setTotal((productAmount + 1) * product.price);
-        totalValue += product.price;
-        setTotalValue(totalValue);
+        setProductAmount((prev) => prev + 1);
+        setTotalValue((prev) => prev + product.price);
+        setTotal((prev) => prev + product.price);
         cart.forEach((thisProduct) => {
           if (thisProduct._id === product._id) {
             thisProduct.amount++;
@@ -113,6 +121,7 @@ export default function ProductInCart({
       localCart[index].amount++;
       setProductAmount((prev) => prev + 1);
       setTotalValue((prev) => prev + product.price);
+      setTotal((prev) => prev + product.price);
       localStorage.setItem("cart", `${JSON.stringify(localCart)}`);
       setCart(localCart);
     }
@@ -139,6 +148,7 @@ export default function ProductInCart({
         setTotal((productAmount - 1) * product.price);
         totalValue -= product.price;
         setTotalValue(totalValue);
+        setTotal((prev) => prev - product.price);
         cart.forEach((thisProduct) => {
           if (thisProduct._id === product._id) {
             thisProduct.amount--;
@@ -159,6 +169,7 @@ export default function ProductInCart({
       localCart[index].amount--;
       setProductAmount((prev) => prev - 1);
       setTotalValue((prev) => prev - product.price);
+      setTotal((prev) => prev - product.price);
       localStorage.setItem("cart", `${JSON.stringify(localCart)}`);
       setCart(localCart);
     }

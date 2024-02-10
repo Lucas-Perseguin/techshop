@@ -21,6 +21,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 50px;
+  @media (max-width: 50em) {
+    padding: 20px 10px;
+  }
 `;
 
 const Title = styled.div`
@@ -48,15 +51,21 @@ const MainDataContainer = styled.div`
   padding: 20px;
   border: 1px solid ${mainPink};
   border-radius: 20px;
+  gap: 20px;
+  @media (max-width: 50em) {
+    flex-direction: column;
+  }
 `;
 
 const Productscontainer = styled.div`
   background-color: white;
   border-radius: 6px;
+  width: 100%;
 `;
 
 const Infos = styled.div`
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   background-color: white;
   border-radius: 6px;
   display: flex;
