@@ -144,7 +144,7 @@ const Text = styled.p`
 `;
 const LineSection = styled.div`
   width: 100%;
-  height: 2em;
+  height: 3em;
   display: flex;
   justify-content: center;
   align-items: center;

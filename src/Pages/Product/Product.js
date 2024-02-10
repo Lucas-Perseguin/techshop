@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  padding: 40px 100px 0;
+  padding: 40px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,12 +24,17 @@ const Container = styled.div`
     margin-bottom: 30px;
   }
   img {
-    width: 608px;
-    height: 475px;
+    width: 100%;
+    aspect-ratio: 608 / 475;
+    max-width: 608px;
+    max-height: 475px;
     background: #ffffff;
     border: 2px solid #ff4791;
     border-radius: 10px;
     margin-bottom: 40px;
+  }
+  @media (max-width: 50em) {
+    padding: 10px 25px;
   }
 `;
 
@@ -74,6 +79,9 @@ const Buttons = styled.div`
     }
   }
   margin-bottom: 90px;
+  @media (max-width: 50em) {
+    margin-bottom: 40px;
+  }
 `;
 
 const Counter = styled.div`
@@ -111,6 +119,10 @@ const Description = styled.p`
   border-radius: 5px;
   padding: 70px;
   margin-top: 40px;
+  @media (max-width: 50em) {
+    font-size: 14px;
+    padding: 10px;
+  }
 `;
 
 const AnchorContainer = styled.div`
@@ -258,7 +270,7 @@ export default function Product() {
             <button onClick={() => setAmount(amount + 1)}>+</button>
           </Counter>
         </Buttons>
-        <h1>DESCRIÇÃO</h1>
+        <h1 style={{color: "white"}}>DESCRIÇÃO</h1>
         <Description>{product.description}</Description>
       </Container>
     );
