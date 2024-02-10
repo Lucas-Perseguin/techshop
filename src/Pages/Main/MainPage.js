@@ -163,4 +163,6 @@ const Items = styled.div`
   }
   margin-bottom: 20px;
 `;
-const ContainerSales = styled.div``;
+const ContainerSales = styled.div`
+  width: 100vw;
+`;

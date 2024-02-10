@@ -51,6 +51,13 @@ const ContainerBoxes = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  @media (max-width: 50em) {
+    flex-direction: column;
+    height: 100%;
+    justify-content: start;
+    align-items: start;
+    gap: 15px;
+  }
 `;
 const Box1 = styled.div`
   width: 65%;
@@ -77,7 +84,10 @@ const Box1 = styled.div`
 const MiniBoxes = styled.div`
   width: 25%;
   @media (max-width: 50em) {
-    display: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 `;
 const Box2 = styled.div`
@@ -97,6 +107,9 @@ const Box2 = styled.div`
   &:hover {
     opacity: 0.5;
   }
+  @media (max-width: 50em) {
+    margin: 0;
+  }
 `;
 const Box3 = styled.div`
   width: 100%;
@@ -114,6 +127,9 @@ const Box3 = styled.div`
   cursor: pointer;
   &:hover {
     opacity: 0.5;
+  }
+  @media (max-width: 50em) {
+    margin: 0;
   }
 `;
 const Text = styled.p`
