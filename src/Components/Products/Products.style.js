@@ -36,4 +36,5 @@ export const Page = styled.div`
   align-items: center;
   color: white;
   padding-bottom: 20px;
+  padding-right: 4em;
 `;
